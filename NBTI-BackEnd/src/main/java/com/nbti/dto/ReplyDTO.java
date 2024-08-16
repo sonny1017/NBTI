@@ -11,6 +11,7 @@ public class ReplyDTO {
 	private int board_seq;
 	private int board_code;
 	private int count; // 좋아요 개수
+	private String name; // 이름 추가
 	
 	public ReplyDTO() {
 	}
@@ -23,10 +24,11 @@ public class ReplyDTO {
 		this.board_seq = board_seq;
 		this.board_code = board_code;
 		this.count = 0;
+		this.name = null;
 	}
 
 	public ReplyDTO(int seq, String member_id, String contents, Timestamp write_date, int board_seq, int board_code,
-			int count) {
+			int count, String name) {
 		super();
 		this.seq = seq;
 		this.member_id = member_id;
@@ -35,8 +37,17 @@ public class ReplyDTO {
 		this.board_seq = board_seq;
 		this.board_code = board_code;
 		this.count = count;
+		this.name = name;
+	}
+	
+
+	public String getName() {
+		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public int getCount() {
 		return count;

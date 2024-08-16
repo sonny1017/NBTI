@@ -51,6 +51,7 @@ public class BoardController {
 	    map.put("end", end);
 	    
 	    List<BoardDTO> list = bserv.selectAll(map);
+	    
 	    for(BoardDTO dto : list) {
 	    	int replyCount = rserv.countReply(dto.getSeq(), code);
 	    	dto.setReply_count(replyCount);
